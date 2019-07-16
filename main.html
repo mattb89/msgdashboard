@@ -2,53 +2,83 @@
 <html>
 <head>
 <style>
-.btn-group .button {
-  background-color: #42a7f5; /* Blue */
-  border: 1px solid blue;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
   float: left;
 }
 
-.btn-group .button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.btn-group .button:hover {
-  background-color: #658299;/* Grey */
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: grey;
 }
 
-.main-container {
-      float: left;
-      position: relative;
-      left: 50%;
+li.dropdown {
+  display: inline-block;
 }
 
-.fixer-container {
-      float: left;
-      position: relative;
-      left: -50%;
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 </head>
 <body>
-<div class="main-container">
-	<div class="fixer-container">
-      <div class="btn-group">
-        <button class="button">TRW Focus</button>
-        <button class="button">30 Days Out</button>
-        <button class="button">60 Days Out</button>
-        <button class="button">High Priority</button>
-        <button class="button">Low Priority</button>
-      </div>
-	</div>
-</div>
+
+<ul>
+  <li><a href="#home">Dashboard</a></li>
+  <li><a href="#news">All Taskings</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Date Filters</a>
+    <div class="dropdown-content">
+      <a href="#">30 Days Out</a>
+      <a href="#">60 Days Out</a>
+      <a href="#">90 Days Out</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Unit Filters</a>
+    <div class="dropdown-content">
+      <a href="#">FSS</a>
+      <a href="#">ID</a>
+      <a href="#">LRS</a>
+    </div>
+  </li>
+</ul>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
 
 </body>
 </html>
